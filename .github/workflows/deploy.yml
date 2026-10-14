@@ -22,6 +22,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      # Enable Pages in Settings > Pages with GitHub Actions as the source first.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -70,8 +74,6 @@ jobs:
           
           # Prevent Jekyll processing
           touch ./_site/.nojekyll
-      
-      - uses: actions/configure-pages@v4
       
       - uses: actions/upload-pages-artifact@v3
         with:

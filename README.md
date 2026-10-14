@@ -41,6 +41,21 @@ uv run uvicorn app.main:app --reload
 
 Open [http://localhost:8000](http://localhost:8000) and start meeting your squares.
 
+## Deploy the workshop to GitHub Pages
+
+Before running `.github/workflows/deploy.yml` in your repository, an owner or
+maintainer must open **Settings → Pages → Build and deployment** and select
+**GitHub Actions** as the **Source**. The workflow's `GITHUB_TOKEN` can deploy to
+an existing Pages site, but cannot enable Pages automatically.
+
+If `build-and-deploy` fails at **Configure GitHub Pages** with
+`Get Pages site failed` / `HttpError: Not Found`, configure this setting, then
+rerun the failed workflow from the **Actions** tab. No code change or additional
+token is needed to enable deployment once Pages is configured.
+
+GitHub Pages hosts the static workshop and start-screen preview only; run the
+FastAPI server locally for the interactive game.
+
 ---
 
 Built with Python, FastAPI, and HTMX. Have fun, meet someone new, and call **BINGO!**
