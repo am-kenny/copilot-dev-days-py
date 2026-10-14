@@ -23,3 +23,13 @@ Social Bingo game for in-person mixers. Find people who match the questions and 
 ## 🚀 Getting Started
 
 Head to **[Part 00: Overview](https://copilot-dev-days.github.io/agent-lab-python/step.html?step=00-overview)** for prerequisites and setup instructions.
+
+## Code Quality
+
+Run `uv run ruff check .` to check code style, unused imports and variables (`F`),
+unused arguments (`ARG`), and function type annotations (`ANN`). Ruff enforces
+annotation presence, not type correctness. Historical workshop checkpoints in
+`.solutions/` are excluded from root-level linting.
+
+Run `uv run python -m compileall -q app` to check compilation and `uv run pytest`
+to run the tests.
